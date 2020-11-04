@@ -179,7 +179,7 @@ class CameraActivity : AppCompatActivity() {
                 }
 
                 // Convert the image to RGB and place it in our shared buffer
-                image.use { converter.yuvToRgb(image.image!!, bitmapBuffer) }
+                image.use { converter.yuvToRgb(image, bitmapBuffer) }
 
                 // Process the image in Tensorflow
                 val tfImage =  tfImageProcessor.process(tfImageBuffer.apply { load(bitmapBuffer) })
